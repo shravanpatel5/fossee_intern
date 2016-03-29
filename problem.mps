@@ -1,9 +1,15 @@
--20x0 -40x1 -20x2 -15x3 -30x4
-5x0 +4x1 +3x2 +7x3 +8x4 <= 25
-1x0 +7x1 +9x2 +4x3 +6x4 <= 25
-8x0 +10x1 +2x2 + 1x3+ 10x4 <= 25
-0 <= x0 <= 1
-0 <= x1 <= 1
-0 <= x2 <= 1
-0 <= x3 <= 1
-0 <= x4 <= 1
+Minimize
+ OBJ :    -20*XZERO - 40*XONE - 20*XTWO - 15*XTHREE - 30*XFOUR
+ 
+Subject To
+ ROW1:    5*XZERO + 4*XONE + 3*XTWOE + 7*XTHREE + 8*XFOUR       <= 25
+ ROW2:    1*XZERO + 7*XONE + 9*XTWO + 4*XTHREE + 6*XFOUR         <= 25
+ ROW3:    8*XZERO + 10*XONE + 2*XTWO + 1*XTHREE + 10*XFOUR       <= 25
+
+Bounds
+  0<= XZERO <= 1
+  0<= XONE <= 1
+  0<= XTWO <= 1
+  0<= XTHREE <= 1
+  0<= XFOUR <= 1
+End
