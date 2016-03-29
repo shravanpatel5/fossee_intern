@@ -3,6 +3,13 @@
 // 2nd year CSE
 // gmail : shravanpatel5@gmail.com
 
+// Here I couldn't be able to solve this problem using cbc functions because of some reasons. 
+// But I got details about some Cbc functions and classes.
+
+// To solve this problem, I am considering all possible solutions and then checking if it satisfies given constraints or not.
+// I know, this algo will take much more time for big value of n. 
+// But for n<=30 it will take just 1-2 seconds. 
+
 #include<iostream>
 #include<cstdlib>  // for malloc
 #include<cmath>    // for pow
@@ -64,7 +71,7 @@ int main()
 		cout<<"n should be positive"<<endl;
 		return 0;
 	}	
-	p = (double*) malloc(n*sizeof(double));
+	p = (double*) malloc(n*sizeof(double));       // dynamically allocate memory to pointers; 
 	b = (double*) malloc(m*sizeof(double));
 	x = (int*) malloc(n*sizeof(int));
 	r = (double*) malloc(n*m*sizeof(double));	
@@ -83,20 +90,23 @@ int main()
 	}	
 	tp=pow(2,n);
 	int flag=0;
-	for(sol=0;sol<tp;sol++)
+	for(sol=0;sol<tp;sol++)                        // sol is a number corresponds to each possible solution
 	{
-		ntob(sol,n,x);
-		if(check(x,n,m,r,b))                   //check whether the permutation satisfies the contraints
+		ntob(sol,n,x);                         // Converting sol to the permutation of 0s and 1s
+		if(check(x,n,m,r,b))                   // check whether the permutation satisfies the contraints
 		{
 			flag++;
 			value=val(x,n,p);
-			if(max<value||flag==1)		//update maximum value
+			if(max<value||flag==1)		// update maximum value
 			{
 				max=value;
 				max_n=sol;
 			}						
 		}							
 	}
+	
+	// Print the solution
+	
 	if(flag>0)
 	{
 		cout<<"Maximum value of the problem objective : "<<max<<endl;
