@@ -8,6 +8,8 @@
 // problem.mps must contains negative of objective function
 // For the given example, problem.mps file must contain -20x0-40x1-20x2-15x3-30x4  
 
+// I am confused about how the problem should be described in the problem.mps file. Please Update the MPS file if it is wronge.
+
 #include "CbcModel.hpp"						// To solve problem
 #include "OsiClpSolverInterface.hpp"                  		// To take problem statement as input
 int main (int argc, const char *argv[])
